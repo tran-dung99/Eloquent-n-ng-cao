@@ -21,4 +21,13 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
            'password' => $request->password
        ]);
     }
+
+    public function update($request)
+    {
+        $model = $this->model::findOrFail($request->id);
+        $model->name = $request->name;
+        $model->email = $request->email;
+        $model->password = $request->password;
+        $model->save();
+    }
 }

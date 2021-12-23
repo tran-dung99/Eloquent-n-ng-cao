@@ -33,6 +33,13 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-
+    public function showFormUpdate($id) {
+        $user = $this->userRepository->getById($id);
+        return view('user.update',compact('user'));
+    }
+    public function update(Request $request) {
+        $this->userRepository->update($request);
+        return redirect()->route('users.index');
+    }
 
 }

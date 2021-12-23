@@ -17,7 +17,7 @@
             <td>{{$user->email}}</td>
             <td><a href="{{route('users.detail',$user->id)}}">detail</a></td>
             <td><a href="{{route('users.delete',$user->id)}}">delete</a></td>
-            <td><a href="{{route('users.delete',$user->id)}}">update</a></td>
+            <td><a href="{{route('users.formUpdate',$user->id)}}">update</a></td>
         </tr>
         @endforeach;
     </tbody>
